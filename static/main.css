@@ -62,7 +62,7 @@ body {
     height: 15vh;
     margin-left: 9vw;
     margin-top: 4vh;
-    opacity: 1;
+    opacity: .8;
 }
 
 #body_container > div > p {
@@ -179,45 +179,49 @@ body {
 }
 
 #container_four {
-    width: 90vw;
+    width: 92vw;
     height: 80vh;
     border-bottom: 1px solid rgba(0, 0, 0, .4);
     margin: auto;
     display: grid;
     grid-template-columns: 30vw 30vw 30vw;
-    grid-template-rows: 35vh 35vh;
+    grid-template-rows: 33vh 33vh;
+    column-gap: 1vw;
+    row-gap: 3vh;
     margin-top: 7.5vh;
-    border: 1px solid pink;
+    border: 0px solid pink;
 }
 
 #container_four > div {
-    border: 1px solid green;
+    border: 1px solid rgba(0, 0, 0, .4);
+    border-radius: 15px;
 }
 
 #container_four > div > div {
     display: flex;
-    padding-top: 2.5vh;
+    padding-top: 2vh;
     justify-content: center;
     align-items: center;
 }
 
 #container_four > div > div > img {
-    width: 4vw;
+    width: 3vw;
+    opacity: .8;
     padding-right: 1vw;
 }
 
 #container_four > div > p {
-    font-size: 16px;
+    font-size: 15px;
     font-family: 'Roboto', sans-serif;
     text-align: justify;
     width: 90%;
     padding-top: 2vh;
-    color: rgba(0, 0, 0, .8);
+    color: rgba(0, 0, 0, .7);
     margin: auto;
 }
 
 #container_four > div > div > h2 {
-    font-size: 24px;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
     font-weight: normal;
 }
