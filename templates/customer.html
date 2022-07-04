@@ -1,0 +1,332 @@
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <script src="https://cdn.plot.ly/plotly-2.12.1.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+<body>
+
+  <div id="top_nav">
+    <h1>DataBoard</h1>
+    <a href="/">Home</a>
+    <a id="first_link" href="/customer">Customer</a>
+    <a href="/marketing">Financial</a>
+    <a href="database">Database</a>
+    <a href="/help">Help</a>
+  </div>
+
+  <div id="filters">
+    <p id="first_filter">Week</p>
+    <p>Month</p>
+    <p>Quarter</p>
+    <p>Year </p>
+  </div>
+
+    <div id="container">
+      <div>
+        <p>Total Customers: 113<span class="spam_1">▲3% vs LW</span></p>
+        <div id="graph1">  </div>
+      </div>
+
+      <div>
+        <p>New Customer Sources<span class="spam_2">▼2% vs LW</span></p>
+        <div id="graph2">  </div>
+      </div>
+
+      <div>
+        <p>Net Promo Score: 8<span class="spam_1">▲5% vs LW</span></p>
+        <div id="graph3">  </div>
+      </div>
+
+      <div>
+        <p>Social Media Activity<span class="spam_2">▼1% vs LW</span></p>
+        <div id="graph4">  </div>
+      </div>
+
+      <div>
+        <p>Web Visits & Email Signup<span class="spam_2">▼4% vs LW</span></p>
+        <div id="graph5">  </div>
+      </div>
+
+      <div>
+        <p>Cost: $6,800<span class="spam_1">▲7% vs LW</span></p>
+        <div id="graph6">  </div>
+      </div>
+
+    </div>
+
+
+</body>
+
+<script>
+var trace1 = {
+  x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  y: [5, 10, 8, 4, 13],
+  name: 'New',
+  type: 'bar',
+  marker: {color: 'rgba(0,150,0,.15)',
+    line: {
+      color: 'rgba(0,150,0,0.7)',
+      width: 1.}}
+};
+
+var trace2 = {
+  x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  y: [12, 15, 13, 17, 19],
+  name: 'Repeat',
+  type: 'bar',
+  marker: {color: 'rgba(125,0,0,.15)',
+    line: {
+      color: 'rgba(125,0,0,0.5)',
+      width: 1}}
+
+};
+
+var data = [trace1, trace2];
+
+var layout = {
+    barmode: 'group',
+  xaxis: {
+    showgrid: false,
+    zeroline: true,
+    showline: true},
+    yaxis: {
+    showgrid: false,
+    zeroline: true,
+    showline: true},
+  margin: {
+    l: 30,
+    r: 0,
+    b: 30,
+    t: 0,
+  }
+};
+
+var config = {
+  displayModeBar: false, // this is the line that hides the bar.
+};
+
+Plotly.newPlot('graph1', data, layout, config);
+
+var trace1 = {
+  x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  y: [12, 15, 13, 17, 19],
+  type: 'scatter',
+  name: "Store",
+  marker: {color: 'rgba(66, 133, 244,.5)'}
+};
+
+var trace2 = {
+  x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  y: [6, 5, 8, 9, 11],
+  type: 'scatter',
+  name: "Online",
+  marker: {color: 'rgba(219, 68, 55,.5)'}
+};
+
+var trace3 = {
+  x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  y: [10, 10, 11, 13, 15],
+  type: 'scatter',
+  name: "Referral",
+  marker: {color: 'rgba(15 ,157 ,88,.5)'}
+};
+
+var data = [trace1, trace2, trace3];
+
+var layout = {
+  xaxis: {
+    showgrid: false,
+    zeroline: true,
+    showline: true},
+    yaxis: {
+    showgrid: false,
+    zeroline: true,
+    showline: true},
+  margin: {
+    l: 30,
+    r: 15,
+    b: 30,
+    t: 0,
+  }
+};
+
+
+var config = {
+  displayModeBar: false, // this is the line that hides the bar.
+};
+
+Plotly.newPlot('graph2', data, layout, config);
+
+var trace1 = {
+  x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  y: [7,8,9,6,9,8],
+  type: 'scatter',
+  name: "Current",
+  line: {color: 'rgba(15 ,157 ,88,.5)'}
+};
+
+var trace2 = {
+  x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  y: [8,8,8,8,8],
+  mode: 'lines',
+  line: {color: 'rgba(219, 68, 55,.6)'},
+  name: "Target"
+};
+var data = [trace1,trace2];
+
+var layout = {
+  xaxis: {
+    showgrid: false,
+    zeroline: true,
+    showline: true},
+    yaxis: {
+    showgrid: false,
+    zeroline: true,
+    showline: true},
+  margin: {
+    l: 30,
+    r: 15,
+    b: 30,
+    t: 0,
+  }
+};
+
+var config = {
+  displayModeBar: false, // this is the line that hides the bar.
+};
+
+Plotly.newPlot('graph3', data, layout, config);
+
+
+var trace1 = {
+  x: ['Facebook', 'Youtube', 'Twitter'],
+  y: [15, 10, 8],
+  name: 'Activity',
+  type: 'bar',
+  marker: {color: 'rgba(66, 133, 244,.1)',
+    line: {
+      color: 'rgba(66, 133, 244,.9)',
+      width: 1}}
+};
+
+var trace2 = {
+    x: ['Facebook', 'Youtube', 'Twitter'],
+    y: [20, 15, 13],
+  name: 'Follow',
+  type: 'bar',
+  marker: {color: 'rgba(0,0,0,.06)',
+    line: {
+      color: 'rgba(0,0,0,0.6)',
+      width: 1}}
+};
+
+var data = [trace1, trace2];
+
+var layout = {
+    barmode: 'group',
+    xaxis: {
+    showgrid: false,
+    zeroline: true,
+    showline: true},
+    yaxis: {
+    showgrid: false,
+    zeroline: true,
+    showline: true},
+  margin: {
+    l: 30,
+    r: 0,
+    b: 30,
+    t: 0,
+  }
+};
+
+var config = {
+  displayModeBar: false, // this is the line that hides the bar.
+};
+
+Plotly.newPlot('graph4', data, layout, config);
+
+var trace1 = {
+  x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  y: [5000, 4000, 5000, 3000, 3600],
+  type: 'scatter',
+  name: "Email",
+  line: {color: 'rgba(66, 133, 244,.5)'}
+};
+
+var trace2 = {
+  x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  y: [10000, 9000, 8000, 5000, 8500],
+  type: 'scatter',
+  name: "Web",
+  line: {color: 'rgba(15 ,157 ,88,.5)'}
+};
+
+var data = [trace1,trace2];
+
+var layout = {
+  xaxis: {
+    showgrid: false,
+    zeroline: true,
+    showline: true},
+    yaxis: {
+    showgrid: false,
+    zeroline: false,
+    showline: true},
+  margin: {
+    l: 40,
+    r: 15,
+    b: 40,
+    t: 0,
+    pad: 0
+  }
+};
+
+var config = {
+  displayModeBar: false, // this is the line that hides the bar.
+};
+
+Plotly.newPlot('graph5', data, layout, config);
+
+var data = [
+  {
+    x: ['Operation', 'Payroll', 'C.O.G.S.','Other'],
+    y: [20, 14, 23, 9],
+    type: 'bar',
+    marker: {color: 'rgba(219, 68, 55,.3)'}
+  }
+];
+
+var layout = {
+  xaxis: {
+    showgrid: false,
+    zeroline: true,
+    showline: true},
+    yaxis: {
+    showgrid: false,
+    zeroline: true,
+    showline: true},
+  margin: {
+    l: 30,
+    r: 0,
+    b: 30,
+    t: 0,
+  }
+};
+
+var config = {
+  displayModeBar: false, // this is the line that hides the bar.
+};
+
+Plotly.newPlot('graph6', data, layout, config);
+
+</script>
+
+
+</html>
