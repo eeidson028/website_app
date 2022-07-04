@@ -183,18 +183,60 @@ body {
     height: 80vh;
     border-bottom: 1px solid rgba(0, 0, 0, .4);
     margin: auto;
-    border-top: 1px solid rgba(0, 0, 0, .4);
-    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+    grid-template-rows: 35vh 35vh;
+    margin-top: 7.5vh;
+    border: 1px solid pink;
 }
 
-#container_four > h2 {
+#container_four > div {
+    border: 1px solid green;
+}
+
+#container_four > div > div {
+    display: flex;
+    padding-top: 2.5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#container_four > div > div > img {
+    width: 4vw;
+    padding-right: 1vw;
+}
+
+#container_four > div > p {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    text-align: justify;
+    width: 90%;
+    padding-top: 2vh;
+    color: rgba(0, 0, 0, .8);
+    margin: auto;
+}
+
+#container_four > div > div > h2 {
+    font-size: 24px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+
+#how_it_works {
+   border-top: 1px solid rgba(0, 0, 0, .4);
+    width: 90vw;
+    margin-top: 7.5vh;
+    margin-left: 5vw;
+}
+
+#how_it_works > h2 {
     font-size: 45px;
     font-weight: normal;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
     width: 20vw;
     text-align: left;
-    padding-left: 10vw;
+    padding-left: 5vw;
     border: 0px solid rgba(0, 0, 0, .4);
-    padding-top: 3vh;
+    padding-top: 3vh;   
 }
